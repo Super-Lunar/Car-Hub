@@ -216,3 +216,28 @@
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
+
+@layer utilities {
+  .customScrollbar {
+    scrollbar-width: normal;
+  }
+
+  .customScrollbar::-webkit-scrollbar {
+    width: 6.5px;
+    height: 6.5px;
+  }
+
+  .customScrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px 0;
+  }
+
+  .customScrollbar::-webkit-scrollbar-thumb {
+    background-color: #aeafb0;
+    border-radius: 5px;
+  }
+
+  .customScrollbar::-webkit-scrollbar-button {
+    display: none;
+  }
+}
