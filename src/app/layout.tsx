@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Car Hub",
   description: "Discover the best cars in the world",
+  icons: {
+    icon: "/mainlogo.svg",
+  },
 };
 
 export default function RootLayout({
