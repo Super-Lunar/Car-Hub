@@ -37,3 +37,18 @@ export interface OptionProps {
   title: string;
   value: string;
 }
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}
+
+export interface ParamsType {
+  searchParams: {
+    manufacturer?: string;
+    year?: number;
+    fuel?: string;
+    limit?: number;
+    model?: string;
+  };
+}

@@ -2,10 +2,12 @@ import CarCard from "@/components/CarCard";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
+import ShowMore from "@/components/ShowMore";
 import { fuels, yearsOfProduction } from "@/constants/constants";
+import { ParamsType } from "@/types/types";
 import { fetchCars } from "@/utils";
 
-export default async function Home({ searchParams }: { searchParams: any }) {
+export default async function Home({ searchParams }: ParamsType) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -39,6 +41,11 @@ export default async function Home({ searchParams }: { searchParams: any }) {
                 <CarCard car={car} key={`car-${index}`} />
               ))}
             </div>
+
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">

@@ -14,7 +14,7 @@ const CustomButton = ({
 }: ButtonProps) => {
   return (
     <button
-      disabled={false}
+      disabled={false || isDisabled}
       type={btnType || "button"}
       className={`custom-btn ${addStyles}`}
       onClick={handleClick}
